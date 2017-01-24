@@ -36,7 +36,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "luajava.h"
+#include <jni.h>
 #include "lua.h"
 #include "lualib.h"
 #include "lauxlib.h"

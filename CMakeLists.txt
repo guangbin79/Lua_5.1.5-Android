@@ -15,7 +15,7 @@ include_directories( zziplib-0.13.62/
 # Gradle automatically packages shared libraries with your APK.
 
 add_library( # Sets the name of the library.
-             Lua_5.1.5-Android
+             lua51
 
              # Sets the library as a shared library.
              SHARED
@@ -67,7 +67,8 @@ add_library( # Sets the name of the library.
              zziplib-0.13.62/zzip/zip.c
              luazip-1.2.6/src/luazip.c
              android-compat/telldir.c
-             memorymapping/src/fmemopen.c )
+             memorymapping/src/fmemopen.c
+             luajava-1.1/src/c/luajava.c )
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because system libraries are included in the search path by
@@ -90,7 +91,7 @@ find_library( zlib
 # build script, prebuilt third-party libraries, or system libraries.
 
 target_link_libraries( # Specifies the target library.
-                       Lua_5.1.5-Android
+                       lua51
 
                        # Links the target library to the log library
                        # included in the NDK.
