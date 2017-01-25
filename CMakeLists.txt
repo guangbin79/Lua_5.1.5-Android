@@ -8,7 +8,10 @@ include_directories( zziplib-0.13.62/
                      lua-5.1.5/src/
                      luazip-1.2.6/src/
                      memorymapping/src/
-                     luafilesystem-v_1_6_3/src/ )
+                     luafilesystem-v_1_6_3/src/
+                     luasocket-3.0-rc1/src/ )
+
+add_definitions( -DLUASOCKET_DEBUG )
 
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
@@ -70,7 +73,20 @@ add_library( # Sets the name of the library.
              android-compat/telldir.c
              memorymapping/src/fmemopen.c
              luajava-1.1/src/c/luajava.c
-             luafilesystem-v_1_6_3/src/lfs.c )
+             luafilesystem-v_1_6_3/src/lfs.c
+             luasocket-3.0-rc1/src/auxiliar.c
+             luasocket-3.0-rc1/src/buffer.c
+             luasocket-3.0-rc1/src/except.c
+             luasocket-3.0-rc1/src/inet.c
+             luasocket-3.0-rc1/src/io.c
+             luasocket-3.0-rc1/src/luasocket.c
+             luasocket-3.0-rc1/src/mime.c
+             luasocket-3.0-rc1/src/options.c
+             luasocket-3.0-rc1/src/select.c
+             luasocket-3.0-rc1/src/tcp.c
+             luasocket-3.0-rc1/src/timeout.c
+             luasocket-3.0-rc1/src/udp.c
+             luasocket-3.0-rc1/src/usocket.c )
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because system libraries are included in the search path by
