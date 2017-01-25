@@ -7,7 +7,8 @@ cmake_minimum_required(VERSION 3.4.1)
 include_directories( zziplib-0.13.62/ 
                      lua-5.1.5/src/
                      luazip-1.2.6/src/
-                     memorymapping/src/ )
+                     memorymapping/src/
+                     luafilesystem-v_1_6_3/src/ )
 
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
@@ -68,7 +69,8 @@ add_library( # Sets the name of the library.
              luazip-1.2.6/src/luazip.c
              android-compat/telldir.c
              memorymapping/src/fmemopen.c
-             luajava-1.1/src/c/luajava.c )
+             luajava-1.1/src/c/luajava.c
+             luafilesystem-v_1_6_3/src/lfs.c )
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because system libraries are included in the search path by
