@@ -4,6 +4,10 @@
 
 cmake_minimum_required(VERSION 3.4.1)
 
+include_directories( zziplib-0.13.62/ 
+                     lua-5.1.5/src/
+                     luazip-1.2.6/src/ )
+
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
 # You can define multiple libraries, and CMake builds it for you.
@@ -47,7 +51,21 @@ add_library( # Sets the name of the library.
              lua-5.1.5/src/lundump.c
              lua-5.1.5/src/lvm.c
              lua-5.1.5/src/lzio.c
-             lua-5.1.5/src/print.c )
+             lua-5.1.5/src/print.c
+             zziplib-0.13.62/zzip/dir.c
+             zziplib-0.13.62/zzip/err.c
+             zziplib-0.13.62/zzip/fetch.c
+             zziplib-0.13.62/zzip/file.c
+             zziplib-0.13.62/zzip/fseeko.c
+             zziplib-0.13.62/zzip/info.c
+             zziplib-0.13.62/zzip/memdisk.c
+             zziplib-0.13.62/zzip/mmapped.c
+             zziplib-0.13.62/zzip/plugin.c
+             zziplib-0.13.62/zzip/stat.c
+             zziplib-0.13.62/zzip/write.c
+             zziplib-0.13.62/zzip/zip.c
+             luazip-1.2.6/src/luazip.c
+             android-compat/telldir.c )
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because system libraries are included in the search path by
@@ -62,6 +80,9 @@ find_library( # Sets the name of the path variable.
               # you want CMake to locate.
               log )
 
+find_library( zlib
+              z )
+
 # Specifies libraries CMake should link to your target library. You
 # can link multiple libraries, such as libraries you define in the
 # build script, prebuilt third-party libraries, or system libraries.
@@ -71,4 +92,5 @@ target_link_libraries( # Specifies the target library.
 
                        # Links the target library to the log library
                        # included in the NDK.
-                       ${log-lib} )
+                       ${log-lib}
+                       ${zlib} )
