@@ -6,7 +6,8 @@ cmake_minimum_required(VERSION 3.4.1)
 
 include_directories( zziplib-0.13.62/ 
                      lua-5.1.5/src/
-                     luazip-1.2.6/src/ )
+                     luazip-1.2.6/src/
+                     memorymapping/src/ )
 
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
@@ -65,7 +66,8 @@ add_library( # Sets the name of the library.
              zziplib-0.13.62/zzip/write.c
              zziplib-0.13.62/zzip/zip.c
              luazip-1.2.6/src/luazip.c
-             android-compat/telldir.c )
+             android-compat/telldir.c
+             memorymapping/src/fmemopen.c )
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because system libraries are included in the search path by
