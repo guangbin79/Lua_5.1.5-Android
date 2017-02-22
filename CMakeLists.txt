@@ -86,7 +86,8 @@ add_library( # Sets the name of the library.
              luasocket-3.0-rc1/src/tcp.c
              luasocket-3.0-rc1/src/timeout.c
              luasocket-3.0-rc1/src/udp.c
-             luasocket-3.0-rc1/src/usocket.c )
+             luasocket-3.0-rc1/src/usocket.c
+             rings-v_1_3_0/src/rings.c )
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because system libraries are included in the search path by
